@@ -1,3 +1,48 @@
+/**
+ * Micro:bit kocsi labitintusban bolyong, a cél az, hogy ne akadjon el
+ * 
+ * ======================================================================
+ * 
+ * Hardver:
+ * 
+ * Ultrahang érzékelők néznek a jármű elején 45-45 fokos irányban előre.
+ * 
+ * Az egyik ultrahang szenzor a CuteBot készlet része volt, a másikat a P2-es kivezetésre tettem.
+ * 
+ * Két meghajtott kerék van, sajnos 15%-os teljesítmény alatt már nem hajtja meg a kocsit.
+ * 
+ * Használjuk még a compass szenzort, elakadás kezelésre.
+ * 
+ * ======================================================================
+ * 
+ * Szoftver:
+ * 
+ * A manővereket egyszerű függvényekbe szerveztem, az áttekinthetőség miatt is.
+ * 
+ * Az ismétlődő értékeket változókba tettem.
+ * 
+ * ======================================================================
+ * 
+ * Működési elképzelés:
+ * 
+ * Ha elakadt: tolat, majd (véletlenszerű forgásiránnyal) visszafordul.
+ * 
+ * Ha valamelyik oldalt kisebb a távolság egy megadottnál: a ellenkező irányba kormányoz egy kicsit.
+ * 
+ * Ha mindkét oldalt kisebb a távolság a megadottnál: tolat, majd visszafordul.
+ * 
+ * ======================================================================
+ * 
+ * Kezelés, visszajelzések:
+ * 
+ * 'B' gomb engedi a járművet mozogni.
+ * 
+ * 'A' gomb leállítja a járművet.
+ * 
+ * A motorok aktuális hajtását a LED mátrixon kijelzi, a megfelelő oldal oszlopán fent és lent, kanyarodáskor a megfelelő oldal oszlopának közepén.
+ * 
+ * A manőverek esetén hangjelzést ad, ezzel is áttekinthetőbbé vált a működés.
+ */
 function moveForward () {
     if (!(isOperating)) {
         return
