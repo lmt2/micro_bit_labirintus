@@ -1,9 +1,9 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="LX%{*0a`;L+gaG;lSL/S">leftDist</variable><variable id="5CXoZaeyqn6FiX`G8~~b">rightDist</variable><variable id="@EbefHsxh@8Dz0%:vEIc">leftDistMin</variable><variable id="g3*@^?Nd/=Vj2@`N;:87">rightDistMin</variable><variable id="59Mj|0Cw5Q0f5zsh=%qH">isOperating</variable><variable id=")3r6n;a]M[]lf71zmCSQ">heading</variable><variable id="_};B3w[7YvHa?mW=NtQR">prevHeading</variable><variable id="#-u2WHK(9@/*djCF~3!;">haltCounter</variable><variable id="3lONdDV%iLX9;{}qJ{gO">mustReverse</variable><variable id="3qm8=uHhF_{f{I+1|}o=">turnSpeed</variable><variable id="NAW{=9xCCldL`]nEb[$o">speed</variable><variable id="C02~uY{gzYq21fc_{sIk">headingTreshold</variable><variable id="Oc@y~|Q38vuuTTZOZt.3">haltCounterMax</variable><variable id="GmKAn^u-cvY#[K`Es8G+">lastTurn</variable></variables><comment id="S~n3Ayrc+x(Iq=2vJ^mZ" x="-1076.333333333333" y="-173.22222222222263" w="766.6666259765625" h="361.1111145019531" collapsed="true">Micro:bit kocsi labitintusban bolyong, a cél az, hogy ne akadjon el
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="LX%{*0a`;L+gaG;lSL/S">leftDist</variable><variable id="5CXoZaeyqn6FiX`G8~~b">rightDist</variable><variable id="@EbefHsxh@8Dz0%:vEIc">leftDistMin</variable><variable id="g3*@^?Nd/=Vj2@`N;:87">rightDistMin</variable><variable id="59Mj|0Cw5Q0f5zsh=%qH">isOperating</variable><variable id=")3r6n;a]M[]lf71zmCSQ">heading</variable><variable id="_};B3w[7YvHa?mW=NtQR">prevHeading</variable><variable id="#-u2WHK(9@/*djCF~3!;">haltCounter</variable><variable id="3lONdDV%iLX9;{}qJ{gO">mustReverse</variable><variable id="3qm8=uHhF_{f{I+1|}o=">turnSpeed</variable><variable id="NAW{=9xCCldL`]nEb[$o">speed</variable><variable id="C02~uY{gzYq21fc_{sIk">headingTreshold</variable><variable id="Oc@y~|Q38vuuTTZOZt.3">haltCounterMax</variable><variable id="GmKAn^u-cvY#[K`Es8G+">lastTurn</variable></variables><comment id="S~n3Ayrc+x(Iq=2vJ^mZ" x="-1076.333333333333" y="-173.22222222222263" w="766.6666259765625" h="361.1111145019531">Micro:bit kocsi labitintusban bolyong, a cél az, hogy ne akadjon el
 ======================================================================
 Hardver:
 
 Ultrahang érzékelők néznek a jármű elején 45-45 fokos irányban előre.
-Az egyik ultrahang szenzor a CuteBot készlet része volt, a másikat a P2-es kivezetésre tettem.
+Az egyik ultrahang szenzor a CuteBot készlet része volt, egy másikat a P2-es kivezetésre tettem.
 Két meghajtott kerék van, sajnos 15%-os teljesítmény alatt már nem hajtja meg a kocsit.
 Használjuk még a compass szenzort, elakadás kezelésre.
 
@@ -22,13 +22,15 @@ Ha valamelyik oldalt kisebb a távolság egy megadottnál: a ellenkező irányba
 
 Ha mindkét oldalt kisebb a távolság a megadottnál: tolat, majd visszafordul.
 
+Ha mindkét oldalt nagyobb a távolság a megadottnál: előre megy.
+
 ======================================================================
 Kezelés, visszajelzések:
 
-'B' gomb engedi a járművet mozogni.
-'A' gomb leállítja a járművet.
+'B' gomb engedi a járművet mozogni, az első lámpák világítanak.
+'A' gomb leállítja a járművet, az első lámpák nem világítanak.
 
-A motorok aktuális hajtását a LED mátrixon kijelzi, a megfelelő oldal oszlopán fent és lent, kanyarodáskor a megfelelő oldal oszlopának közepén.
+A motorok aktuális hajtását a LED mátrixon kijelzi, a megfelelő oldal oszlopán fent (hátra) és lent (előre), kanyarodáskor a megfelelő oldal oszlopának közepén.
 
 A manőverek esetén hangjelzést ad, ezzel is áttekinthetőbbé vált a működés.
 

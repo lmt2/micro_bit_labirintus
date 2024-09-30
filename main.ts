@@ -7,7 +7,7 @@
  * 
  * Ultrahang érzékelők néznek a jármű elején 45-45 fokos irányban előre.
  * 
- * Az egyik ultrahang szenzor a CuteBot készlet része volt, a másikat a P2-es kivezetésre tettem.
+ * Az egyik ultrahang szenzor a CuteBot készlet része volt, egy másikat a P2-es kivezetésre tettem.
  * 
  * Két meghajtott kerék van, sajnos 15%-os teljesítmény alatt már nem hajtja meg a kocsit.
  * 
@@ -31,15 +31,17 @@
  * 
  * Ha mindkét oldalt kisebb a távolság a megadottnál: tolat, majd visszafordul.
  * 
+ * Ha mindkét oldalt nagyobb a távolság a megadottnál: előre megy.
+ * 
  * ======================================================================
  * 
  * Kezelés, visszajelzések:
  * 
- * 'B' gomb engedi a járművet mozogni.
+ * 'B' gomb engedi a járművet mozogni, az első lámpák világítanak.
  * 
- * 'A' gomb leállítja a járművet.
+ * 'A' gomb leállítja a járművet, az első lámpák nem világítanak.
  * 
- * A motorok aktuális hajtását a LED mátrixon kijelzi, a megfelelő oldal oszlopán fent és lent, kanyarodáskor a megfelelő oldal oszlopának közepén.
+ * A motorok aktuális hajtását a LED mátrixon kijelzi, a megfelelő oldal oszlopán fent (hátra) és lent (előre), kanyarodáskor a megfelelő oldal oszlopának közepén.
  * 
  * A manőverek esetén hangjelzést ad, ezzel is áttekinthetőbbé vált a működés.
  */
