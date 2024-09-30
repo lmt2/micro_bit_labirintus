@@ -42,6 +42,9 @@ input.onButtonPressed(Button.A, function () {
     isOperating = false
     cuteBot.closeheadlights()
 })
+// Valamilyen megoldás kell arra, hogy ha elakad a jármű, akkor kikeveredjen belőle.
+// Az ötlet az, hogy nézzük a compass heading-et, és ha az nem változik, valamennyi ideig, akkor elakadt.
+// Ekkor billen be a mustReverse.
 function watchDog () {
     heading = input.compassHeading()
     if (Math.abs(heading - prevHeading) <= headingTreshold) {
